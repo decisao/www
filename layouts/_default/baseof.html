@@ -4,17 +4,10 @@
 <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <link rel="icon" href="/static/img/brand/favicon.png" type="image/png" />
+      <link rel="icon" href="/static/img/favicon.png" type="image/png" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="description" content="Gestão de Resultado" />
-      <meta property="og:site_name" content="decisao.net" />
-      <meta property="og:title" content="decisao.net" />
-      <meta property="og:description" content="Gestão de Resultado" />
-      <meta property="og:image" content="/static/img/brand/icon-512x512.png" />
-      <meta property="og:image:secure_url" content="/static/img/brand/icon-512x512.png" />
-      <meta property="og:type" content="website" />
-      <meta property="og:updated_time" content="1440432930" />
+      <meta name="description" content="Taligent" />
       <title>
             {{ if eq .Kind "home" }}
             {{ .Site.Title }}
@@ -22,16 +15,18 @@
             {{ .Site.Title }} • {{ .Title }}
             {{ end }}
       </title>
-      <!--     Fonts and icons     -->
-      <link rel="stylesheet" href="/static/fonts/open-sans/open-sans.css" type="text/css" />
+      <!-- Fonts and icons -->
+      <link rel="stylesheet" type="text/css"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
       <!-- Nucleo Icons -->
       <link href="/static/css/nucleo-icons.css" rel="stylesheet" />
       <link href="/static/css/nucleo-svg.css" rel="stylesheet" />
       <!-- Font Awesome Icons -->
-      <link href="/static/fonts/fontawesome/css/all.css" rel="stylesheet" />
+      <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+      <!-- Material Icons -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
       <!-- CSS Files -->
-      <link id="pagestyle" href="/static/css/soft-design-system-pro.css" rel="stylesheet" />
-      <link href="static/css/custom.css" rel="stylesheet" />
+      <link id="pagestyle" href="/static/css/material-kit-pro.css?v=3.0.3" rel="stylesheet" />
 </head>
 
 <body {{- block "bodyclass" . }} {{- end }}>
@@ -40,31 +35,21 @@
 
       <!--   No JS Support   -->
       <noscript>Sem JavaScript, verifique seu navegador.</noscript>
-      <!-- Privacy Scripts -->
-      <script type="text/javascript" id="cookieinfo" src="/static/js/cookieinfo.min.js" data-bg="#252f40"
-            data-fg="#f8f9fa" data-link="#fbcf33" data-cookie="CookieInfoScript" data-text-align="left"
-            data-message="<strong> Aviso: </strong> Usamos cookies neste site, ao continuar você concorda com nossa "
-            data-close-text="Concordo" data-moreinfo="#" data-linkmsg="Política de Privacidade" data-divlinkbg="#f8f9fa"
-            data-divlink="#252f40" data-font-family="Open Sans">
-            </script>
 
       <!--   Core JS Files   -->
       <script src="/static/js/core/popper.min.js" type="text/javascript"></script>
       <script src="/static/js/core/bootstrap.min.js" type="text/javascript"></script>
-      <script src="/static/js/plugins/perfect-scrollbar.min.js" type="text/javascript"></script>
+      <script src="/static/js/plugins/perfect-scrollbar.min.js"></script>
+      <!--  Plugin for TypedJS, full documentation here: https://github.com/mattboldt/typed.js/ -->
+      <script src="/static/js/plugins/typedjs.js"></script>
+      <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+      <script src="/static/js/plugins/parallax.min.js"></script>
+      <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+      <script src="/static/js/plugins/nouislider.min.js" type="text/javascript"></script>
+      <!--  Plugin for the blob animation -->
       <script src="/static/js/plugins/anime.min.js" type="text/javascript"></script>
-      {{- block "javascripts" . }}{{- end }}
-      <!-- Control Center for Soft UI Kit: parallax effects, scripts for the example pages etc -->
-      <script src="/static/js/soft-design-system-pro.js" type="text/javascript"></script>
-
-      <!--   Mobile language switcher   -->
-      {{ range $.AllTranslations }}
-      <script>
-            document.getElementById('lang_link_{{ .Lang }}').addEventListener('click', function () {
-                  document.getElementById('lang_form_{{ .Lang }}').submit();
-            });
-      </script>
-      {{ end }}
+      <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+      <script src="/static/js/material-kit-pro.min.js?v=3.0.3" type="text/javascript"></script>
 
 </body>
 
