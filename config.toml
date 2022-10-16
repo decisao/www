@@ -3,15 +3,6 @@ languageCode = "pt-br"
 title = "decisao.net"
 assetDir = "static/"
 enableRobotsTXT = true
-DefaultContentLanguage = "pt-br"
-
-[languages]
-  [languages.pt-br]
-    languageName = "Português"
-    weight = 10
-  [languages.en]
-    languageName = "English"
-    weight = 20
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
