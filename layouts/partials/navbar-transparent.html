@@ -1,0 +1,49 @@
+<!-- Navbar Transparent -->
+<nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
+    <div class="container">
+    <a class="navbar-brand font-weight-bolder ms-sm-3 d-lg-block d-none"
+       href='{{ if .IsHome }}#{{ else }}{{ "" | relLangURL }}{{ end }}'
+       rel="tooltip"
+       title="decisao.net"
+       data-placement="bottom">
+        <img id="logofull" width="196" height="41" alt="decisao.net" src="/static/img/brand/logow.png"/>
+    </a>
+<a class="navbar-brand font-weight-bolder ms-sm-3 d-lg-none d-block"
+   href='{{ if .IsHome }}#{{ else }}{{ "" | relLangURL }}{{ end }}'
+   rel="tooltip"
+   title="decisao.net"
+   data-placement="bottom">
+    <img id="logosquare" width="41" height="41" alt="decisao.net" src="/static/img/brand/logo4w.png"/>
+</a>
+<a href="{{ $.Site.Params.loginURL }}"
+   class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">Entrar</a>
+<button class="navbar-toggler shadow-none ms-2"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navigation"
+        aria-controls="navigation"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon mt-2">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+    </span>
+</button>
+<div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0"
+     id="navigation">
+    <ul class="navbar-nav navbar-nav-hover mx-auto">
+        {{ .Scratch.Set "nav_color" "1" }}
+        {{- partial "menu-account.html" . -}}
+        {{- partial "menu-language.html" . -}}
+    </ul>
+    <ul class="navbar-nav d-lg-block d-none">
+        <li class="nav-item">
+            <a href="{{ $.Site.Params.loginURL }}"
+               class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1">Entrar</a>
+        </li>
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Navbar -->

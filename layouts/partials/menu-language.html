@@ -1,0 +1,66 @@
+<li class="nav-item dropdown dropdown-hover mx-2">
+    <a role="button" class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center "
+        id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+        Idioma
+        {{ $icon := .Scratch.Get "nav_color" }}
+        {{ if eq $icon "1" }}
+        <img src="/static/img/down-arrow-white.svg" width="10" height="7" alt="down-arrow"
+            class="arrow ms-1 d-lg-block d-none" />
+        <img src="/static/img/down-arrow-white.svg" width="10" height="7" alt="down-arrow"
+            class="arrow ms-1 d-lg-none d-block" />
+        {{ end }}
+        {{ if eq $icon "0" }}
+        <img src="/static/img/down-arrow-dark.svg" width="10" height="7" alt="down-arrow"
+            class="arrow ms-1 d-lg-block d-none" />
+        <img src="/static/img/down-arrow-dark.svg" width="10" height="7" alt="down-arrow"
+            class="arrow ms-1 d-lg-none d-block" />
+        {{ end }}
+    </a>
+    <div class="dropdown-menu dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+        aria-labelledby="dropdownMenuBlocks">
+        <div class="d-none d-lg-block">
+            <ul class="list-group">
+                {{ range $.AllTranslations }}
+                <li class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                    <a href="{{.RelPermalink}}">
+                        <button type="button" class="dropdown-item py-2 ps-3 border-radius-md">
+                            <div class="d-flex">
+                                <div class="icon h-10 me-3 d-flex mt-1">
+                                    <i
+                                        class="ni ni-single-copy-04 text-gradient {{if eq .Lang $.Lang}}text-primary{{ else }}text-secondary{{ end }}"></i>
+                                </div>
+                                <div class="w-100 d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <p class="dropdown-header text-dark p-0">{{.Language.LanguageName}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <!-- responsive -->
+        <div class="row d-lg-none">
+            <div class="col-md-12">
+                {{ range $.AllTranslations }}
+                <form id="lang_form_{{ .Lang }}" name="lang_form_{{ .Lang }}" method="get" action="{{.RelPermalink}}">
+                <a id="lang_link_{{ .Lang }}" class="py-2 ps-3 border-radius-md">
+                    <div class="d-flex">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                            <i class="ni ni-single-copy-04 text-gradient {{if eq .Lang $.Lang}}text-primary{{ else }}text-secondary{{ end }}"></i>
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>
+                                <p class="dropdown-header text-dark p-0">{{.Language.LanguageName}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </form>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,95 @@
+<li class="nav-item dropdown dropdown-hover mx-2">
+    <a role="button"
+       class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center "
+       id="dropdownMenuAccount"
+       data-bs-toggle="dropdown"
+       aria-expanded="false">
+        Conta
+        {{ $icon := .Scratch.Get "nav_color" }}
+        {{ if eq $icon "1" }}
+        <img src="/static/img/down-arrow-white.svg"
+             width="10"
+             height="7"
+             alt="down-arrow"
+             class="arrow ms-1 d-lg-block d-none"/>
+        <img src="/static/img/down-arrow-white.svg"
+             width="10"
+             height="7"
+             alt="down-arrow"
+             class="arrow ms-1 d-lg-none d-block"/>
+        {{ end }}
+        {{ if eq $icon "0" }}
+        <img src="/static/img/down-arrow-dark.svg"
+             width="10"
+             height="7"
+             alt="down-arrow"
+             class="arrow ms-1 d-lg-block d-none"/>
+        <img src="/static/img/down-arrow-dark.svg"
+             width="10"
+             height="7"
+             alt="down-arrow"
+             class="arrow ms-1 d-lg-none d-block"/>
+        {{ end }}
+    </a>
+    <div class="dropdown-menu dropdown-menu-animation dropdown-lg border-radius-xl p-3 mt-0 mt-lg-3"
+         aria-labelledby="dropdownMenuAccount">
+        <div class="row d-none d-lg-flex">
+            <div class="col-6">
+                <div class="py-6 h-100 w-100 d-flex border-radius-lg position-relative dropdown-image"
+                     id="accountbarbackimg">
+                    <div class="mask bg-gradient-primary border-radius-lg"></div>
+                    <div class="d-flex justify-content-center align-items-center text-center text-white font-weight-bold w-100 z-index-1 flex-column">
+                        <div class="icon icon-shape rounded-circle bg-white shadow text-center">
+                            <i class="ni ni-diamond text-primary text-gradient text-lg"
+                               aria-hidden="true"></i>
+                        </div>
+                        <span class="text-lg mt-2">Gerencie
+                            <br />
+                        sua Conta</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 ps-0 d-flex justify-content-center flex-column">
+                <ul class="list-group">
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                        <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between mb-1"
+                           href="{{ $.Site.Params.loginURL }}">
+                            <span>Entrar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                        <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between mb-1"
+                           href="{{ $.Site.Params.signupURL }}">
+                            <span>Cadastrar</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                        <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between mb-1"
+                           href="{{ $.Site.Params.resetURL }}">
+                            <span>Recuperar senha</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem list-group-item border-0 p-0">
+                        <a class="dropdown-item border-radius-md ps-3 d-flex align-items-center justify-content-between mb-1"
+                           href="{{ $.Site.Params.changeURL }}">
+                            <span>Trocar senha</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- responsive -->
+        <div class="row d-lg-none">
+            <div class="col-12 d-flex justify-content-center flex-column">
+                <a href="{{ $.Site.Params.loginURL }}"
+                   class="dropdown-item border-radius-md">Entrar</a>
+                <a href="{{ $.Site.Params.signupURL }}"
+                   class="dropdown-item border-radius-md">Cadastrar</a>
+                <a href="{{ $.Site.Params.resetURL }}"
+                   class="dropdown-item border-radius-md">Recuperar senha</a>
+                <a href="{{ $.Site.Params.changeURL }}"
+                   class="dropdown-item border-radius-md">Trocar senha</a>
+            </div>
+        </div>
+    </div>
+</li>

@@ -1,0 +1,22 @@
+{{ define "bodyclass" }} class="" {{ end }}
+{{ define "main" }}
+
+<section class="my-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 my-auto">
+        <h1 class="display-1 text-bolder text-gradient text-danger">Erro 404</h1>
+        <h2>Ops. Página não encontrada</h2>
+        <p class="lead">Você pode voltar a página inicial e começar de novo.</p>
+        <a href="/">
+          <button type="button" class="btn bg-gradient-dark mt-4">Voltar ao início</button>
+        </a>
+      </div>
+      <div class="col-lg-6 my-auto position-relative">
+        <img class="w-100 position-relative" src="/assets/img/illustrations/error-404.png" alt="404-error"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
